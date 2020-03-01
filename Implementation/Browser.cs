@@ -10,15 +10,21 @@ namespace Implementation
 {
     public class Browser
     {
-        private IWebDriver driver;
+        private IWebDriver driver = new ChromeDriver();
+
         public Browser()
         {
-            
         }
 
-        public void openBrowser()
+        protected void OpenBrowser(string url)
         {
-            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(url);
         }
+
+        public void CloseBroser()
+        {
+            driver.Quit();
+        }
+        
     }
 }

@@ -7,19 +7,15 @@ using System.Threading.Tasks;
 
 namespace Implementation.Pages
 {
-    public class HomePage
+    public class HomePage : Browser
     {
-        private IWebDriver driver;
-
-        public HomePage(IWebDriver driver)
+        public HomePage()
         {
-            this.driver = driver;
+            
         }
-
-        public HomePage goToPage()
+        public void GoToHomePage()
         {
-            driver.Navigate().GoToUrl("http://www.google.com");
-            return this;
+            OpenBrowser("https://www.google.com/");
         }
     }
 }

@@ -9,30 +9,30 @@ using System.IO;
 using Implementation;
 using Implementation.Pages;
 
+
 namespace Tests
 {
     [TestFixture]
     public class Testy
     {
+        HomePage homePage = new HomePage();
+
         [SetUp]
         public void SetUp()
         {
-            Browser browser = new Browser();
-            browser.openBrowser();
+            homePage.GoToHomePage();
         }
 
         [Test]
         public void SearchTextFromAboutPage()
         {
-            HomePage homePage = new HomePage();
-            homePage.goToPage();
             
         }
          
         [TearDown]
         public void TearDown()
         {
-            
+            homePage.CloseBroser();
         }
     }
 }
